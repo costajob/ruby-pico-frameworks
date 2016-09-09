@@ -47,9 +47,6 @@ I registered these benchmarks with a MacBook PRO 15 mid 2015 having these specs:
 ### Puma
 All of the pico framework run over the mighty [Puma](http://puma.io/) application server.
 
-### RAM and CPU
-I measured RAM and CPU consumption by using the Apple XCode's Instruments and recording max consumption peak.  
-
 ### Wrk
 I used [wrk](https://github.com/wg/wrk) as the loading tool.
 I measured each application server three times, picking the best lap (apart for JVM that demands warm-up).  
