@@ -1,12 +1,8 @@
 MESSAGE = "Hello world!"
 
-$LOAD_PATH.unshift(File.expand_path('../lib', __FILE__))
-require "sinatra_app"
-require "roda_app"
-require "rack_app"
-require "nyny_app"
-require "ramaze_app"
-require "grape_app"
+Dir[File.expand_path("../lib/*.rb", __FILE__)].each do |app|
+  require app
+end
 
 run Proc.new { |env| ["200", {"Content-Type" => "text/html"}, [MESSAGE]] }
 
@@ -33,4 +29,12 @@ end
 
 map "/grape" do
   run GrapeApp
+end
+
+map "/camping" do
+  run CampingApp
+end
+
+map "/hobbit" do
+  run HobbitApp
 end

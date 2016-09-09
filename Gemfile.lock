@@ -24,6 +24,9 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
     builder (3.2.2)
+    camping (2.1.532)
+      mab (>= 0.0.3)
+      rack (>= 1.0)
     coderay (1.1.1)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -43,11 +46,14 @@ GEM
       rack-accept
       virtus (>= 1.0.0)
     hashie (3.4.4)
+    hobbit (0.6.1)
+      rack
     i18n (0.7.0)
     ice_nine (0.11.2)
     innate (2013.02.21)
       rack (~> 1.5.2)
     json (1.8.3)
+    mab (0.0.3)
     minitest (5.9.0)
     multi_json (1.12.1)
     multi_xml (0.5.5)
@@ -94,7 +100,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  camping
   grape
+  hobbit
   nyny
   puma
   rack-app
