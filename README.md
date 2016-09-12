@@ -66,12 +66,12 @@ Here are the benchmarks results ordered by increasing throughput.
 
 | App Server   | Throughput (req/s) | Latency in ms (avg/stdev/max) | Delta from rack % |
 | :------------| -----------------: | ----------------------------: | ----------------: |
-| RackApp      |           !error!  |                      !error!  |            100.0  |
 | Ramaze       |           4127.44  |           20.17/19.42/299.00  |             90.7  |
 | Grape        |          15393.65  |              3.58/3.99/62.34  |             65.6  |
 | Sinatra      |          19130.20  |             4.47/4.33/128.41  |             57.2  |
 | Camping      |          20322.49  |             4.75/4.77/128.82  |             54.6  |
 | NyNy         |          22124.41  |              4.22/3.36/87.65  |             50.6  |
+| RackApp      |          33858.52  |             3.26/5.79/135.76  |             24.4  |
 | Roda         |          40492.11  |             2.55/4.09/130.58  |              9.6  |
 | Hobbit       |          41595.06  |             2.57/3.75/108.26  |              7.1  |
 | Rack         |          44813.41  |              2.19/2.80/96.79  |              0.0  |
