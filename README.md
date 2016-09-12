@@ -104,5 +104,5 @@ I admit that when i need raw performance over few endpoints i stick with raw Rac
 #### Roda
 When i need more features i stick with Roda, for the following reasons: 
 * although it is feature-complete it only depends on Rack
-* is fast, more than twice than Sinatra
+* is fast, very close to plain Rake
 * it integrates perfectly with [Sequel](http://sequel.jeremyevans.net/), also from the Ruby-hero [Jeremy Evans](https://github.com/jeremyevans). 
