@@ -67,7 +67,7 @@ bundle exec puma -w 7 --preload config.ru
 ```
 
 ### Results
-Here are the benchmarks results ordered by increasing throughput, along with the size in Kb of the gem and its first level dependencies number.
+Here are the benchmarks results ordered by increasing throughput, along with the size in Kb of the gem and its first level dependencies footprint.
 
 | App Server   | Throughput (req/s) | Latency in ms (avg/stdev/max) | Size (Kb) | Dependencies |
 | :------------| -----------------: | ----------------------------: | --------: | -----------: |
