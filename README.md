@@ -97,7 +97,11 @@ Libraries that add to the advanced routing features, extensibility via plug-ins/
 Sinatra, Grape and Roda falls within this group.
 
 ### Personal preference
+
+#### Plain Rack
 I admit that when i need raw performance over few endpoints i stick with raw Rack: it's pretty flexible and leave you writing less code than you think to get things done.  
+
+#### Roda
 When i need more features i stick with Roda, for the following reasons: 
 * although it is feature-complete it only depends on Rack
 * is fast, more than twice than Sinatra
