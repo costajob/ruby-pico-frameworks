@@ -67,19 +67,19 @@ bundle exec puma -w 7 --preload config.ru
 ```
 
 ### Results
-Here are the benchmarks results ordered by increasing throughput, along with the size in Kb of the gem and its first level dependencies footprint.
+Here are the benchmarks results ordered by increasing throughput, along with the size in Kb.
 
-| App Server   | Throughput (req/s) | Latency in ms (avg/stdev/max) | Size (Kb) | Dependencies |
-| :------------| -----------------: | ----------------------------: | --------: | -----------: |
-| Grape        |          14820.93  |              6.94/5.92/92.89  |     1484  |           9  |
-| Sinatra      |          17640.65  |             6.45/5.80/110.60  |     1512  |           3  |
-| Camping      |          19552.77  |              5.32/4.68/89.26  |      624  |           2  |
-| NyNy         |          25774.92  |             3.72/4.22/125.46  |      144  |           2  |
-| Rack-App     |          34003.95  |              2.50/3.18/95.15  |      624  |           1  |
-| Roda         |          40346.38  |             2.40/3.44/107.80  |     1168  |           1  |
-| Syro         |          41949.61  |             2.73/4.06/121.66  |       56  |           2  |
-| Hobbit       |          42241.28  |              2.47/3.34/93.86  |       84  |           1  |
-| Rack         |          43662.67  |             2.47/3.70/123.14  |     1248  |           0  |
+| App Server   | Throughput (req/s) | Latency in ms (avg/stdev/max) | Size (Kb) |
+| :------------| -----------------: | ----------------------------: | --------: |
+| Grape        |          14820.93  |              6.94/5.92/92.89  |     1484  |
+| Sinatra      |          17640.65  |             6.45/5.80/110.60  |     1512  |
+| Camping      |          19552.77  |              5.32/4.68/89.26  |      624  |
+| NyNy         |          25774.92  |             3.72/4.22/125.46  |      144  |
+| Rack-App     |          34003.95  |              2.50/3.18/95.15  |      624  |
+| Roda         |          40346.38  |             2.40/3.44/107.80  |     1168  |
+| Syro         |          41949.61  |             2.73/4.06/121.66  |       56  |
+| Hobbit       |          42241.28  |              2.47/3.34/93.86  |       84  |
+| Rack         |          43662.67  |             2.47/3.70/123.14  |     1248  |
 
 ## Considerations
 After have inspected the tested framework i dare to categorize them within three different groups:
