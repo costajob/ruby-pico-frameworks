@@ -22,19 +22,18 @@ map "/nyny" do
   run NyNyApp.new
 end
 
-map "/ramaze" do
-  Ramaze.start(:file => __FILE__, :started => true)
-  run Ramaze
-end
-
 map "/grape" do
   run GrapeApp
+end
+
+map "/hobbit" do
+  run HobbitApp
 end
 
 map "/camping" do
   run CampingApp
 end
 
-map "/hobbit" do
-  run HobbitApp
+map "/syro" do
+  run SyroApp
 end
