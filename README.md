@@ -71,7 +71,7 @@ Here are the benchmarks results ordered by increasing throughput, along with the
 
 | App Server   | Throughput (req/s) | Latency in ms (avg/stdev/max) | Size (Kb) | Footprint |
 | :------------| -----------------: | ----------------------------: | --------: | --------: |
-| Grape        |          14820.93  |              6.94/5.92/92.89  |     1484  |       20  |
+| Grape        |          14820.93  |              6.94/5.92/92.89  |     1484  |       22  |
 | Sinatra      |          17640.65  |             6.45/5.80/110.60  |     1512  |        3  |
 | Camping      |          19552.77  |              5.32/4.68/89.26  |      624  |        2  |
 | NyNy         |          25774.92  |             3.72/4.22/125.46  |      144  |        2  |
