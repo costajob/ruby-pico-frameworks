@@ -2,6 +2,6 @@ require "hobbit"
 
 class HobbitApp < Hobbit::Base
   get "/" do
-    "Hello World!"
+    MESSAGE
   end
 end
