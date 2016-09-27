@@ -67,7 +67,7 @@ bundle exec puma -w 7 --preload config.ru
 ```
 
 ### Results
-Here are the benchmarks results ordered by increasing throughput, along with the size in Kb and runtime dependencies footprint.
+Here are the benchmarks results ordered by increasing throughput, along with the size in Kb and runtime dependencies footprint (measured by [lapidarius gem](https://rubygems.org/gems/lapidarius)).
 
 | App Server   | Throughput (req/s) | Latency in ms (avg/stdev/max) | Size (Kb) | Footprint |
 | :------------| -----------------: | ----------------------------: | --------: | --------: |
