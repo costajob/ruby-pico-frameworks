@@ -47,39 +47,37 @@ I registered these benchmarks with a MacBook PRO 15 mid 2015 having these specs:
 * OSX El Captain
 * 2,2 GHz Intel Core i7 (4 cores)
 * 16 GB 1600 MHz DDR3
-* Ruby 2.3.1p112
+* Ruby 2.4.1
 
 ### Puma
 All of the pico framework run over the mighty [Puma](http://puma.io/) application server.
 
 ### Wrk
 I used [wrk](https://github.com/wg/wrk) as the loading tool.
-I measured each application server three times, picking the best lap (apart for JVM that demands warm-up).  
-Here is the common script i used:
-
+I measured each application server three times, picking the best lap:
 ```
-wrk -t 4 -c 100 -d30s --timeout 2000 http://127.0.0.1:9292
+wrk -t 4 -c 100 -d30s --timeout 2000 http://0.0.0.0:9292/<app-name>
 ```
 
 ### Bootstrap
 ```
-bundle exec puma -w 7 --preload config.ru
+bundle exec puma -w 8 --preload -e production config.ru
 ```
 
 ### Results
-Here are the benchmarks results ordered by increasing throughput, along with the size in Kb and runtime dependencies footprint (measured by [lapidarius gem](https://rubygems.org/gems/lapidarius)).
+Here are the benchmarks results ordered by increasing throughput, along with the runtime dependencies footprint (measured by [lapidarius gem](https://rubygems.org/gems/lapidarius)).
 
-| App Server   | Throughput (req/s) | Latency in ms (avg/stdev/max) | Size (Kb) | Footprint |
-| :------------| -----------------: | ----------------------------: | --------: | --------: |
-| Grape        |          14820.93  |              6.94/5.92/92.89  |     1484  |       20  |
-| Sinatra      |          17640.65  |             6.45/5.80/110.60  |     1512  |        3  |
-| Camping      |          19552.77  |              5.32/4.68/89.26  |      624  |        2  |
-| NyNy         |          25774.92  |             3.72/4.22/125.46  |      144  |        2  |
-| Rack-App     |          34003.95  |              2.50/3.18/95.15  |      624  |        1  |
-| Roda         |          40346.38  |             2.40/3.44/107.80  |     1168  |        1  |
-| Syro         |          41949.61  |             2.73/4.06/121.66  |       56  |        2  |
-| Hobbit       |          42241.28  |              2.47/3.34/93.86  |       84  |        1  |
-| Rack         |          43662.67  |             2.47/3.70/123.14  |     1248  |        0  |
+| App Server   | Throughput (req/s) | Latency (avg/stdev/max) | Footprint |
+| :------------| -----------------: | ----------------------: | --------: |
+| Grape        |          14933.54  |        4.41/4.87/84.86  |       16  |
+| Sinatra      |          19651.52  |        2.77/3.21/42.15  |        4  |
+| Camping      |          21321.55  |       3.74/4.34/128.30  |        2  |
+| NyNy         |          28629.75  |       3.10/2.91/119.46  |        2  |
+| Rack-App     |          33228.09  |       2.88/5.75/242.18  |        1  |
+| Roda         |          42269.18  |       2.28/3.19/118.29  |        1  |
+| Hobbit       |          43598.54  |       2.26/2.88/120.27  |        1  |
+| Syro         |          43782.98  |       2.11/1.64/115.43  |        2  |
+| Rack         |          44352.50  |        2.07/0.83/78.15  |        0  |
 
 ## Considerations
 After have inspected the tested framework i dare to categorize them within three different groups:
@@ -99,7 +97,7 @@ Sinatra, Grape and Roda falls within this group.
 ### Personal preference
 
 #### Plain Rack
-I admit that when i need raw performance over few endpoints i stick with raw Rack: it's pretty flexible and leave you writing less code than you think to get things done.  
+I admit that when i need raw performance over few endpoints i stick with raw Rack: it is pretty flexible and leave you writing less code than you think to get things done.  
 
 #### Roda
 When i need more features i stick with Roda, for the following reasons: 
