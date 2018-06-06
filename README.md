@@ -44,10 +44,10 @@ The "application" i tested is barely minimal: it is the HTTP version of the "Hel
 
 ### Platform
 I registered these benchmarks with a MacBook PRO 15 mid 2015 having these specs:
-* OSX El Captain
+* OSX High Sierra
 * 2,2 GHz Intel Core i7 (4 cores)
 * 16 GB 1600 MHz DDR3
-* Ruby 2.4.1
+* Ruby 2.5.1
 
 ### Puma
 All of the pico framework run over the mighty [Puma](http://puma.io/) application server.
@@ -67,17 +67,17 @@ bundle exec puma -w 8 --preload -e production config.ru
 ### Results
 Here are the benchmarks results ordered by increasing throughput, along with the runtime dependencies footprint (measured by [lapidarius gem](https://rubygems.org/gems/lapidarius)).
 
-| App Server   | Throughput (req/s) | Latency (avg/stdev/max) | Footprint |
-| :------------| -----------------: | ----------------------: | --------: |
-| Grape        |          14933.54  |        4.41/4.87/84.86  |       16  |
-| Sinatra      |          19651.52  |        2.77/3.21/42.15  |        4  |
-| Camping      |          21321.55  |       3.74/4.34/128.30  |        2  |
-| NyNy         |          28629.75  |       3.10/2.91/119.46  |        2  |
-| Rack-App     |          33228.09  |       2.88/5.75/242.18  |        1  |
-| Roda         |          42269.18  |       2.28/3.19/118.29  |        1  |
-| Hobbit       |          43598.54  |       2.26/2.88/120.27  |        1  |
-| Syro         |          43782.98  |       2.11/1.64/115.43  |        2  |
-| Rack         |          44352.50  |        2.07/0.83/78.15  |        0  |
+| App Server   | Throughput (req/s) | Runtime deps. |
+| :------------| -----------------: | ------------: |
+| Grape        |          15026.28  |           17  |
+| Sinatra      |          19039.44  |            4  |
+| Camping      |          22810.98  |            2  |
+| NyNy         |          29868.78  |            2  |
+| Rack-App     |          30445.27  |            1  |
+| Hobbit       |          42663.44  |            1  |
+| Roda         |          43625.08  |            1  |
+| Syro         |          44682.75  |            2  |
+| Rack         |          49788.63  |            0  |
 
 ## Considerations
 After have inspected the tested framework i dare to categorize them within three different groups:
