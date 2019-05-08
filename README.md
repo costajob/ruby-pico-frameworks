@@ -47,7 +47,7 @@ I registered these benchmarks with a MacBook PRO 15 mid 2015 having these specs:
 * OSX High Sierra
 * 2,2 GHz Intel Core i7 (4 cores)
 * 16 GB 1600 MHz DDR3
-* Ruby 2.5.1
+* Ruby 2.6.3
 
 ### Puma
 All of the pico framework run over the mighty [Puma](http://puma.io/) application server.
