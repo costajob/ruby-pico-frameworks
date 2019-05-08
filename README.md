@@ -69,15 +69,15 @@ Here are the benchmarks results ordered by increasing throughput, along with the
 
 | App Server   | Throughput (req/s) | Runtime deps. |
 | :------------| -----------------: | ------------: |
-| Grape        |          15026.28  |           17  |
-| Sinatra      |          19039.44  |            4  |
-| Camping      |          22810.98  |            2  |
-| NyNy         |          29868.78  |            2  |
-| Rack-App     |          30445.27  |            1  |
-| Hobbit       |          42663.44  |            1  |
-| Roda         |          43625.08  |            1  |
-| Syro         |          44682.75  |            2  |
-| Rack         |          49788.63  |            0  |
+| Grape        |          16921.19  |           17  |
+| Sinatra      |          20190.13  |            4  |
+| Camping      |          24707.91  |            2  |
+| NyNy         |          33596.17  |            2  |
+| Rack-App     |          34769.03  |            1  |
+| Hobbit       |          42166.56  |            1  |
+| Syro         |          49180.78  |            2  |
+| Roda         |          50417.63  |            1  |
+| Rack         |          51577.39  |            0  |
 
 ## Considerations
 After have inspected the tested framework i dare to categorize them within three different groups:
