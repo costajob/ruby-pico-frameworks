@@ -1,7 +1,8 @@
 ## Table of Contents
 
 * [Scope](#scope)
-* [What's pico?](#what-s-pico)
+  * [What's pico?](#what-s-pico)
+  * [Why pico?](#why-pico)
 * [Included frameworks](#included-frameworks)
   * [Raw Rack](#raw-rack)
 * [Application](#application)
@@ -20,8 +21,12 @@
 ## Scope
 This is an (un)fair benchmark of most mature (version >= 1) pico-framework available for the Ruby programming language.
 
-## What's pico?
+### What's pico?
 With pico i intend very tiny routing Web framework, with almost no dependencies but for Rack.  
+
+### Why pico?
+In the micro-service hyping era, exposing fast, plain HTTP routes avoiding the heavyweight of bold frameworks is a desirable feature.  
+Considering  a plain `Rails 6.0` app recorded a throughput of `7000 req/sec`, you can understand why micro-frameworks are a good option.
 
 ## Included frameworks
 Here are the list of the pico-frameworks included in the benchmark:
@@ -30,7 +35,6 @@ Here are the list of the pico-frameworks included in the benchmark:
 * [Rack-App](http://www.rack-app.com/): a performant pico framework dependent on Rack only
 * [NyNy](http://alisnic.github.io/nyny/): a tiny Web framework, dependent from ActionPack
 * [Grape](https://github.com/ruby-grape/grape): an opinionated framework, with several dependencies
-* [Hobbit](https://github.com/patriciomacadden/hobbit): a minimalistic microframework built on top of Rack.
 * [Camping](https://github.com/camping/camping): proud to be a mere 4KB Web framework (the core part)
 * [Syro](http://soveran.github.io/syro/): another, Cuba inspired, simple router for web applications.
 
@@ -44,7 +48,7 @@ The "application" i tested is barely minimal: it is the HTTP version of the "Hel
 
 ### Platform
 I registered these benchmarks with a MacBook PRO 15 mid 2015 having these specs:
-* OSX High Sierra
+* OSX Mojave
 * 2,2 GHz Intel Core i7 (4 cores)
 * 16 GB 1600 MHz DDR3
 * Ruby 2.6.3
@@ -61,7 +65,7 @@ wrk -t 4 -c 100 -d30s --timeout 2000 http://0.0.0.0:9292/<app-name>
 
 ### Bootstrap
 ```
-bundle exec puma -w 8 --preload -e production config.ru
+bundle exec puma -w 8 -t 1 --preload -e production config.ru
 ```
 
 ### Results
@@ -69,22 +73,21 @@ Here are the benchmarks results ordered by increasing throughput, along with the
 
 | App Server   | Throughput (req/s) | Runtime deps. |
 | :------------| -----------------: | ------------: |
-| Grape        |          16921.19  |           17  |
-| Sinatra      |          20190.13  |            4  |
-| Camping      |          24707.91  |            2  |
-| NyNy         |          33596.17  |            2  |
-| Rack-App     |          34769.03  |            1  |
-| Hobbit       |          42166.56  |            1  |
-| Syro         |          49180.78  |            2  |
-| Roda         |          50417.63  |            1  |
-| Rack         |          51577.39  |            0  |
+| Grape        |          16933.75  |           18  |
+| Sinatra      |          20322.81  |            4  |
+| Camping      |          23473.66  |            2  |
+| NyNy         |          30839.99  |            2  |
+| Rack-App     |          33372.97  |            1  |
+| Syro         |          43067.48  |            2  |
+| Roda         |          43116.18  |            1  |
+| Rack         |          43863.58  |            0  |
 
 ## Considerations
 After have inspected the tested framework i dare to categorize them within three different groups:
 
 ### DSL on Rack
 Minimal libraries built on top of Rack APIs, offering (in some cases) identical performance, but leaving the burden (freedom?) of more complex features to the developer.  
-Hobbit, Syro and NyNy fall within this group.
+Syro and NyNy fall within this group.
 
 ### Advanced routers
 More advanced routers that offers desirable features (i.e. filters, streaming) aside from a pretty routing interface.  

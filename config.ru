@@ -1,4 +1,4 @@
-MESSAGE = "Hello world!"
+MESSAGE = "Hello World"
 
 Dir[File.expand_path("../lib/*.rb", __FILE__)].each do |app|
   require app
@@ -24,10 +24,6 @@ end
 
 map "/grape" do
   run GrapeApp
-end
-
-map "/hobbit" do
-  run HobbitApp
 end
 
 map "/camping" do
